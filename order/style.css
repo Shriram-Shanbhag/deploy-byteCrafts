@@ -1,0 +1,11 @@
+.container{
+    text-align: center;
+    width: 100%;
+}
+body{
+    background-image: url(../login/image.jpg);
+    color: white;
+}
+h1{
+    padding-top: 10px;
+}

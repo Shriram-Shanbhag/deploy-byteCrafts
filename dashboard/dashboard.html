@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Delicious Restaurant Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+        body{
+            background-image: url(../login/image.jpg);
+            width:100%;
+            height:100%;
+            object-fit: fill;
+        } 
+    </style>
+</head>
+
+<body>
+    <div class="board">
+        <div id="border">
+            <h1>Dashboard</h1>
+            <div class="button-grid">
+                <div class="modify">
+                    <a href="../front-endPublic/modify-menu.html">
+                        <button>Modify Menu</button>
+                    </a>
+                </div>
+                <div class="manage">
+                    <a href="../front-endPublic/manage-employees.html">
+                        <button>Manage Employee</button>
+                    </a>
+                </div>
+                <div class="orders">
+                    <button id="viewOrdersButton">View Orders</button>
+                </div>
+                <div class="revenue">
+                    <button id="viewRevenueButton">View Today's Revenue</button>
+                </div>
+                <div class="logout">
+                    <button id="logoutButton">Logout</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Orders Table (Hidden Initially) -->
+        <div id="ordersContainer" style="display: none;">
+            <h2>Orders</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Order No</th>
+                        <th>Order Type</th>
+                        <th>Total Amount</th>
+                        <th>Order Date-Time</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="ordersTableBody"></tbody>
+            </table>
+        </div>
+
+        <!-- Order Details Section -->
+        <div id="orderDetailsContainer" style="display: none;">
+            <h2>Order Details</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody id="orderDetailsTableBody"></tbody>
+            </table>
+
+            <!-- Extra Charges Message for Takeaway -->
+            <p id="extraChargeMessage"></p>
+
+            <h3>Payment Details</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Payment ID</th>
+                        <th>Method</th>
+                        <th>UPI ID</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="paymentDetailsTableBody"></tbody>
+            </table>
+
+            <p><strong>Feedback Stars:</strong> <span id="feedbackStars"></span></p>
+        </div>
+
+        <!-- Revenue Section (Hidden Initially) -->
+        <div id="revenueContainer" style="display: none;">
+            <h2>Today's Revenue</h2>
+            <p><strong>Total Revenue: </strong>Rs <span id="todayRevenue">0</span></p>
+            <h3>Completed Orders</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Order No</th>
+                        <th>Order Type</th>
+                        <th>Total Amount</th>
+                        <th>Order Date-Time</th>
+                    </tr>
+                </thead>
+                <tbody id="revenueOrdersTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="./dashboard.js"></script>
+</body>
+
+</html>

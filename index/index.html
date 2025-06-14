@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicious - Fine Dining Experience</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>Delicious <img src="./plate symbol.webp" alt="Plate"></h1>
+                <!-- Royal Character Options:
+                Option 1: Delicious ✧ (current)
+                Option 2: Delicious ✦
+                Option 3: Delicious ✯ (current)
+                Option 4: Delicious ✰
+                Option 5: Delicious ✪
+                Option 6: Delicious ✩
+                Option 7: Delicious ✫
+                Option 8: Delicious ✬
+                Option 9: Delicious ✭
+                Option 10: Delicious ✮
+                Option 11: Delicious ✯
+                Option 12: Delicious ✱
+                Option 13: Delicious ✲
+                Option 14: Delicious ✳
+                Option 15: Delicious ✴
+                Option 16: Delicious ✵
+                Option 17: Delicious ✶
+                Option 18: Delicious ✷
+                Option 19: Delicious ✸
+                Option 20: Delicious ✹
+                Option 21: Delicious ✺
+                Option 22: Delicious ✻
+                Option 23: Delicious ✼
+                Option 24: Delicious ✽
+                Option 25: Delicious ✾
+                Option 26: Delicious ✿
+                Option 27: Delicious ❀
+                Option 28: Delicious ❁
+                Option 29: Delicious ❂
+                Option 30: Delicious ❃
+                Option 31: Delicious ❄
+                Option 32: Delicious ❅
+                Option 33: Delicious ❆
+                Option 34: Delicious ❇
+                Option 35: Delicious ❈
+                Option 36: Delicious ❉
+                Option 37: Delicious ❊
+                Option 38: Delicious ❋
+                Option 39: Delicious ❖
+                Option 40: Delicious ❀
+                Option 41: Delicious ❁
+                Option 42: Delicious ❂
+                Option 43: Delicious ❃
+                Option 44: Delicious ❄
+                Option 45: Delicious ❅
+                Option 46: Delicious ❆
+                Option 47: Delicious ❇
+                Option 48: Delicious ❈
+                Option 49: Delicious ❉
+                Option 50: Delicious ❊
+                -->
+            </div>
+            <div class="nav-menu">
+                <button class="nav-button" onclick="redirectToLogin()">Login</button>
+                <button class="nav-button" onclick="redirectToMenuHomePage()">Menu</button>
+                <button class="nav-button" onclick="redirectToRating()">Rate your order</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="hero-section">
+            <div class="hero-text">
+                <h2 class="hero-title"><img src="./leaf crown.png" alt="Leaf Crown" class="leaf-crown-left"> Heaven is Here <img src="./leaf crown.png" alt="Leaf Crown" class="leaf-crown-right"></h2>
+                <p class="hero-subtitle">Experience the finest dining with our curated menu and exceptional service</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function redirectToRating() {
+            window.location.href = "../feedback/rating.html";
+        }
+        function redirectToLogin() {
+            window.location.href = "../login/login.html";
+        }
+        function redirectToMenuHomePage(){
+            window.location.href = "../menu/menu-homepage.html";
+        }
+    </script>
+</body>
+
+</html>

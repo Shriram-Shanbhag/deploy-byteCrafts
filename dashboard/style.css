@@ -1,0 +1,375 @@
+/* Import Google Fonts to match front page */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500&family=Inter:wght@300;400;500&display=swap');
+
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    background-image: url(../login/image.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #f8f8f8;
+    line-height: 1.6;
+    font-weight: 300;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.board {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#border {
+    background: rgba(28, 28, 28, 0.15);
+    backdrop-filter: blur(15px);
+    padding: 50px 40px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+#border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.05), transparent);
+    pointer-events: none;
+    border-radius: 24px;
+}
+
+/* Dashboard Title */
+#border h1 {
+    color: #f8f8f8;
+    font-size: 2.5rem;
+    font-weight: 400;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#border h1::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: #d4af37;
+    border-radius: 1px;
+}
+
+/* Button Grid Layout */
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.modify, .manage, .orders, .revenue, .logout {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Center logout button horizontally */
+.logout {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.logout button {
+    width: auto;
+    min-width: 200px;
+    max-width: 300px;
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 20px 30px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    transition: left 0.5s;
+    border-radius: 11px;
+}
+
+button:hover::before {
+    left: 100%;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #d4af37;
+    color: #d4af37;
+    transform: translateY(-3px);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+    transform: translateY(-1px);
+}
+
+/* Special styling for logout button */
+.logout button {
+    background: rgba(106, 13, 173, 0.3);
+    border-color: rgba(106, 13, 173, 0.6);
+    color: #ffffff;
+    font-weight: 500;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.logout button:hover {
+    background: rgba(106, 13, 173, 0.4);
+    border-color: #d4af37;
+    color: #d4af37;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Table Containers */
+#ordersContainer, #orderDetailsContainer, #revenueContainer {
+    background: rgba(28, 28, 28, 0.15);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    margin-top: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+#ordersContainer::before, #orderDetailsContainer::before, #revenueContainer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.03), transparent);
+    pointer-events: none;
+    border-radius: 19px;
+}
+
+/* Section Headers */
+#ordersContainer h2, #orderDetailsContainer h2, #revenueContainer h2,
+#orderDetailsContainer h3 {
+    color: #f8f8f8;
+    font-size: 1.8rem;
+    font-weight: 400;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#orderDetailsContainer h3 {
+    font-size: 1.4rem;
+    margin-top: 30px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+}
+
+thead {
+    background: rgba(212, 175, 55, 0.2);
+}
+
+th {
+    color: #f8f8f8;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 15px 12px;
+    text-align: left;
+    border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+td {
+    color: #f8f8f8;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    padding: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Table Action Buttons */
+#ordersTableBody button {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    background: rgba(212, 175, 55, 0.3);
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    color: #ffffff;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+#ordersTableBody button:hover {
+    background: rgba(212, 175, 55, 0.4);
+    border-color: #d4af37;
+    color: #d4af37;
+    transform: translateY(-1px);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Revenue Display */
+#revenueContainer p {
+    color: #f8f8f8;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+#revenueContainer strong {
+    color: #d4af37;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Feedback and Messages */
+#extraChargeMessage {
+    color: #ff6b6b !important;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    margin: 15px 0;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+#feedbackStars {
+    color: #d4af37;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .board {
+        padding: 10px;
+    }
+    
+    #border {
+        padding: 30px 20px;
+    }
+    
+    button {
+        padding: 15px 20px;
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+    
+    .logout button {
+        min-width: 180px;
+        max-width: 250px;
+    }
+    
+    #ordersContainer, #orderDetailsContainer, #revenueContainer {
+        padding: 25px 20px;
+    }
+    
+    table {
+        font-size: 0.8rem;
+    }
+    
+    th, td {
+        padding: 10px 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .button-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    button {
+        padding: 12px 15px;
+        font-size: 0.85rem;
+        font-weight: 500;
+    }
+    
+    .logout button {
+        min-width: 160px;
+        max-width: 200px;
+    }
+}
